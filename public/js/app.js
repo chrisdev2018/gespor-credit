@@ -1,0 +1,11 @@
+$(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+    });
+});
+
+
+$(window).on('load', function () {
+    $(".loader").fadeOut();
+});
