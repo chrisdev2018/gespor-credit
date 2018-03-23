@@ -23,8 +23,7 @@ class CreateDossierInsTable extends Migration
 
             $table->foreign('id_membre')
                 ->references('id')
-                ->on('membres')
-                ->onDelete('cascade');
+                ->on('membres');
 
         });
     }
