@@ -15,7 +15,14 @@ class CreateDecouvertsTable extends Migration
     {
         Schema::create('decouverts', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('id_dossier_in')->unsigned();
+            $table->boolean('statut');
+            $table->bigInteger('agio');
+            $table->date('date_ok');
+
+            $table->foreign('id_dossier_in')
+                ->references('id')
+                ->on('dossier_ins');
         });
     }
 
