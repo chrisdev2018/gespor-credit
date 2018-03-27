@@ -25,6 +25,8 @@ Route::get('/', 'MainController@home')->name('home');
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');
 Route::post('Dossiers', 'DossiersController@store')->name('store');
 Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_les_dossiers');
+Route::get('Dossier_a_traiter','DossiersController@dossier_a_traiter')->name('dossier_a_traiter');
+
 
 
 

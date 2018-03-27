@@ -15,9 +15,6 @@
                 <a class="nav-link" href="{{route('nouveau_dossier')}}"><span class="oi oi-plus" ></span> Nouveau</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><span class="oi oi-book" ></span> Traiter</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#sousmenulist" data-toggle="collapse" aria-expanded="false"><span class="oi oi-list" ></span> Lister les dossiers</a>
                 <ul class="collapse " id="sousmenulist">
                     <li class="nav-item">

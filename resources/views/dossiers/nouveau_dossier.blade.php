@@ -7,6 +7,7 @@
     //TODO:faire les validations du formaulaire
   ?>
 @extends('layouts.master')
+@section('title', 'Nouveau dossier ')
 
 @section('content')
     <h1>Formulaire de demande de crédit</h1>

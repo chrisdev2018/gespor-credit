@@ -43,7 +43,7 @@ class DossiersController extends Controller
 
 
 
-        return view('general.pageDeTest', ['dossier'=>$dossier] );
+        return view('general.home', ['dossier'=>$dossier] );
     }
 
 
@@ -68,7 +68,15 @@ class DossiersController extends Controller
             ->get();
 
 
-        return view('general.pageDeTest', ['dossiers'=>$dossiers] );
+        return view('dossiers.liste_dossier', ['dossiers'=>$dossiers] );
+
+    }
+
+    public function dossier_a_traiter()
+    {
+
+
+        return view('dossiers.traiter_dossier' );
 
     }
 }
