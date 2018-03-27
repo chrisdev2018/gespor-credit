@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DossierOut extends Model
 {
-   protected $fillable =['id_dossier_in', 'motif', 'date_out'];
+   protected $fillable =['motif', 'date_out', 'dossier_in_id'];
 
    public function dossierIn()
    {

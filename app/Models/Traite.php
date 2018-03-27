@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Traite extends Model
 {
-    protected $fillable=['id_dossier_ok', 'statut', 'date_passage', 'mnt_effectif', 'date_effective', 'solde_fin_debit'];
+    protected $fillable=['statut', 'date_passage', 'mnt_effectif', 'date_effective', 'solde_fin_debit', 'dossier_ok_id'];
 
     public function dossierOk()
     {

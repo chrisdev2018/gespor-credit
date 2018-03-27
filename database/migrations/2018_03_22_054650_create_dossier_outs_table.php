@@ -15,11 +15,11 @@ class CreateDossierOutsTable extends Migration
     {
         Schema::create('dossier_outs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_dossier_in')->unsigned();
             $table->text('motif');
             $table->date('date_out');
+            $table->integer('dossier_in_id')->unsigned();
 
-            $table->foreign('id_dossier_in')
+            $table->foreign('dossier_in_id')
                 ->references('id')
                 ->on('dossier_ins');
         });
