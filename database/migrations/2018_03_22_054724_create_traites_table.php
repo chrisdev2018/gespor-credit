@@ -16,7 +16,7 @@ class CreateTraitesTable extends Migration
         Schema::create('traites', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_dossier_ok')->unsigned();
-            $table->boolean('statut');
+            $table->boolean('statut')->default(false);
             $table->date('date_passage');
             $table->bigInteger('mnt_effectif');
             $table->date('date_effective');

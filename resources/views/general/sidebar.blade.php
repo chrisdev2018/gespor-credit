@@ -1,4 +1,4 @@
-
+<?php //TODO: rajouter les flèches pour le drill-drown?>
 <nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar" id="sidebar">
 
     <div class=" app-title" >Système de gestion du porte-feuille de crédit </div>
@@ -9,10 +9,10 @@
         <h5 class="menu-title"> <span class="oi oi-menu" ></span> MENU</h5>
     <hr>
     <ul class="nav nav-pills flex-column">
-        <a class="nav-link" href="#sousmenudossiers" data-toggle="collapse" ><span class="oi oi-folder" ></span> &nbsp; Dossiers</a>
+        <a class="nav-link" href="#sousmenudossiers" data-toggle="collapse" ><i class=" fa fa-envelope "></i> &nbsp; Dossiers</a>
         <ul class="collapse " id="sousmenudossiers">
             <li class="nav-item">
-                <a class="nav-link" href="#"><span class="oi oi-plus" ></span> Nouveau</a>
+                <a class="nav-link" href="{{route('nouveau_dossier')}}"><span class="oi oi-plus" ></span> Nouveau</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><span class="oi oi-book" ></span> Traiter</a>
@@ -21,7 +21,7 @@
                 <a class="nav-link" href="#sousmenulist" data-toggle="collapse" aria-expanded="false"><span class="oi oi-list" ></span> Lister les dossiers</a>
                 <ul class="collapse " id="sousmenulist">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" ><span class="oi oi-action-redo" ></span> Arrivés</a>
+                        <a class="nav-link" href="{{route('tous_les_dossiers')}}" ><span class="oi oi-action-redo" ></span> Arrivés</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"> <span class="oi oi-thumb-up" ></span> Accordés</a>

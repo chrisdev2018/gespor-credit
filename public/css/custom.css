@@ -97,7 +97,7 @@ h1 {
 }
 
 /*le footer*/
-.footer
+.copyright
 {
     border-radius: 5px 5px 5px 5px; ;
     height: auto;
@@ -109,6 +109,10 @@ h1 {
 
 }
 
+.footer{
+    background-color: #1d2124;
+    color: white;
+}
 
 
 /*la navbar*/
@@ -136,3 +140,18 @@ a:hover, a:focus{
 li{
     list-style-type: none;
 }
+
+.formulaire{
+    width: 500px;
+    padding-bottom: 50px;
+    margin-left: 180px;
+}
+
+#buttons-form{
+    margin-top: 50px;
+}
+#xaf{
+    background: rgb(143, 241, 232);
+    border-radius: 5px 5px 5px 5px;
+}
+

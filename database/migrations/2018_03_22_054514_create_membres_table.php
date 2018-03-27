@@ -18,7 +18,7 @@ class CreateMembresTable extends Migration
            $table->string('nom');
            $table->string('prenom');
            $table->string('telephone');
-           $table->bigInteger('num_cpte');
+           $table->bigInteger('num_cpte');//TODO: mettre ce champ en unique
         });
     }
 

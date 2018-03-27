@@ -8,15 +8,14 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 
 class MainController extends Controller
 {
     public function home()
     {
-
-        return view('home');
-
+        return view('general.home');
     }
 
 

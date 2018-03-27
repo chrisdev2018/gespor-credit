@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DossierIn extends Model
 {
-    protected $fillable=['id_membre', 'mnt_dmd', 'date_in', 'garantie', 'type_credit'];
+    protected $fillable=[ 'mnt_dmd', 'date_in', 'garantie', 'type_credit', 'membre_id'];
+    public $timestamps=false;
 
     public function membre()
     {

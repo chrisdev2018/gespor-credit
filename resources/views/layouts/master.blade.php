@@ -13,7 +13,7 @@
 
     <!-- Custom styles design by me -->
     <link href="css/custom.css" rel="stylesheet">
-    <link href="css/open-iconic-bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
 
     @yield('styles')
 </head>
@@ -23,13 +23,13 @@
 
     <div class="container-fluid">
         <div class="row">
-        @include('sidebar')
+        @include('general.sidebar')
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main">
-                @include('navbar')
+                @include('general.navbar')
                <div class="container corps">
                    @yield('content')
                </div>
-                @include('footer')
+                @include('general.footer')
             </main>
         </div>
     </div>

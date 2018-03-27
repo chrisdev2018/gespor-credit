@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Membre extends Model
 {
-    protected $fillable = ['nom', 'prenom', 'telephone', 'num_cpte'];
+  protected $fillable = ['nom', 'prenom', 'telephone', 'num_cpte'];
+    public $timestamps=false;
 
     public function dossierIn()
     {

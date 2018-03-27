@@ -15,13 +15,13 @@ class CreateDossierInsTable extends Migration
     {
         Schema::create('dossier_ins', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_membre')->unsigned();
             $table->integer('mnt_dmd');
             $table->date('date_in');
             $table->longText('garantie');
             $table->string('type_credit');
+            $table->integer('membre_id')->unsigned();
 
-            $table->foreign('id_membre')
+            $table->foreign('membre_id')
                 ->references('id')
                 ->on('membres');
 
