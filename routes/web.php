@@ -26,6 +26,8 @@ Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_doss
 Route::post('Dossiers', 'DossiersController@store')->name('store');
 Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_les_dossiers');
 Route::get('Dossier_a_traiter','DossiersController@dossier_a_traiter')->name('dossier_a_traiter');
+Route::get('Dossier_a_modifier/{membre}/{dossier}', 'DossiersController@dossier_a_modifier')->name('dossier_a_modifier');
+Route::post('', 'DossiersController@modifier_dossier')->name('modifier_dossier');
 
 
 

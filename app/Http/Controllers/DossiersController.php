@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\DossierIn;
 use App\Models\Membre;
+use App\Utils\Dossier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class DossiersController extends Controller
 {
@@ -43,7 +45,8 @@ class DossiersController extends Controller
 
 
 
-        return view('general.home', ['dossier'=>$dossier] );
+        //return view('general.home' );
+        return redirect('/');
     }
 
 
@@ -53,30 +56,57 @@ class DossiersController extends Controller
         if($code=='CT')
         {return 'Crédit de Trésorerie';}
         else if($code=='CS')
-        {return 'Crédit de Scolaire';}
+        {return 'Crédit  Scolaire';}
         else if($code=='MC')
         {return 'Micro-Crédit';}
-        else
+        else if($code=='DE')
         {return 'Découvert';}
 
     }
 
     public function listerDossier()
     {
-        $dossiers= DB::table('membres')
-            ->join('dossier_ins', 'membres.id', '=', 'dossier_ins.membre_id')
+        $membre= DB::table('membres')
+            ->get();
+        $dossier_in= DB::table('dossier_ins')
             ->get();
 
-
-        return view('dossiers.liste_dossier', ['dossiers'=>$dossiers] );
+        return view('dossiers.liste_dossier', compact('membre', 'dossier_in'));
 
     }
 
     public function dossier_a_traiter()
     {
-
-
-        return view('dossiers.traiter_dossier' );
+        return view('dossiers.traiter_dossier', compact('dossier'));
 
     }
+    public function dossier_a_modifier(Membre $membre, DossierIn $dossier)
+    {
+        return view('dossiers.modifier_dossier', compact('membre', 'dossier'));
+    }
+
+    public function modifier_dossier(Request $request)
+    {
+        //mise à jour de la table membre
+        $membre = Membre::find($request->input('idmembre'));
+        $membre->nom = $request->nom;
+        $membre->prenom = $request->prenom;
+        $membre->telephone = $request->telephone;
+        $membre->num_cpte = $request->num_cpte;
+        $membre->save();
+
+
+        //mise à jour de la table dossier_in
+
+        $dossier_in = DossierIn::find($request->input('iddossierin'));
+        $dossier_in->mnt_dmd = $request->input('mnt_dmd');
+        $dossier_in->date_in = $request->input('date_in');
+        $dossier_in->type_credit = $this->type_credit($request->input('type_credit'));
+        $dossier_in->garantie = $request->input('garantie');
+        $dossier_in->membre_id = $request->input('idmembre');
+        $dossier_in->save();
+
+         return redirect(route('tous_les_dossiers'));
+    }
+
 }

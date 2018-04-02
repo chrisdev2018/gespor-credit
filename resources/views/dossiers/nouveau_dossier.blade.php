@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label f class="col-4 col-form-label">Date :</label>
+                    <label  class="col-4 col-form-label">Date :</label>
                     <div class="col-7">
                         <input class="form-control" type="date"  id="date" name="date_in" required="required">
                     </div>
@@ -78,8 +78,8 @@
             </div>
 
                <div class="form-group row justify-content-center" id="buttons-form">
-                   <button type="submit" class=" col- btn btn-success" id="submit"><span class="oi oi-circle-check"></span> Valider</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                   <button class="btn btn-danger  col-" id="reset"><span class="oi oi-circle-x"></span> Annuler</button>
+                   <button type="submit" class="  btn btn-success" id="submit"> Valider</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                   <a class="btn btn-danger " id="reset" href="{{route('home')}}"> Annuler</a>
                </div>
            </form>
 
