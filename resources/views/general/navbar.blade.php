@@ -1,3 +1,5 @@
 <div class=" navbar">
-    hello
+    <div class="notif">
+        <span>Notifications</span>
+    </div>
 </div>

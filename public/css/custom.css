@@ -4,7 +4,7 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 50px;
+    /*padding-top: 10px;*/
    background-image: url("../img/autumn-leaves.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -134,7 +134,7 @@ a:hover, a:focus{
     border: none;
     border-radius: 5px 5px 5px 5px;
     margin-bottom: 20px;
-    height: 70px;
+    height: 50px;
 }
 
 li{
@@ -157,5 +157,9 @@ li{
 
 .list-dossiers{
     margin: 10px;
+}
+
+.notif{
+    float: right;
 }
 
