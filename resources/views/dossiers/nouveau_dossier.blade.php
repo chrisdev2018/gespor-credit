@@ -14,7 +14,7 @@
 
 
        <div class=" formulaire " >
-           <form  method="POST" action="{{route('store')}}" novalidate>
+           <form  method="POST" action="{{route('store')}}" >
                {{csrf_field() }}
                <div id="panel-client">
                    <div class="form-group row">

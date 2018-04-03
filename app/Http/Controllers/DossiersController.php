@@ -46,7 +46,7 @@ class DossiersController extends Controller
 
 
         //return view('general.home' );
-        return redirect('/');
+        return redirect(route('tous_les_dossiers'));
     }
 
 

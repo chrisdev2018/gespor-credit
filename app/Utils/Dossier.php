@@ -8,19 +8,12 @@
 
     namespace App\Utils;
 
-
+    use App\Models\Membre;
+    use App\Models\DossierIn;
     use Illuminate\Database\Eloquent\Model;
 
     class Dossier extends Model
     {
-       public $idmembre;
-       public $nom;
-       public $prenom;
-       public $telephone;
-       public $iddossier;
-       public $numcpte;
-
-
 
 
     }
