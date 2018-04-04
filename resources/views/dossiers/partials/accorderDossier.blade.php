@@ -32,9 +32,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label  class="col-4 col-form-label">Date de validation :</label>
+                        <label  class="col-4 col-form-label">Date de début :</label>
                         <div class="col-7">
-                            <input class="form-control" type="date" name="date_ok" required="required">
+                            <input class="form-control" type="date" name="date_debut" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-4 col-form-label">Date de fin :</label>
+                        <div class="col-7">
+                            <input class="form-control" type="date" name="date_fin" required="required">
                         </div>
                     </div>
                     <div class="form-group row">

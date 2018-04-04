@@ -18,7 +18,8 @@ class CreateDossierOksTable extends Migration
             $table->bigInteger('mnt_ok');
             $table->bigInteger('mnt_traite');
             $table->integer('duree');
-            $table->date('date_ok');
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->integer('dossier_in_id')->unsigned();
 
             $table->foreign('dossier_in_id')
