@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\DossierIn;
+use App\Models\DossierOk;
+use App\Models\DossierOut;
 use App\Models\Membre;
 use App\Utils\Dossier;
 use Carbon\Carbon;
@@ -49,21 +51,6 @@ class DossiersController extends Controller
         return redirect(route('tous_les_dossiers'));
     }
 
-
-
-    public function type_credit($code)
-    {
-        if($code=='CT')
-        {return 'Crédit de Trésorerie';}
-        else if($code=='CS')
-        {return 'Crédit  Scolaire';}
-        else if($code=='MC')
-        {return 'Micro-Crédit';}
-        else if($code=='DE')
-        {return 'Découvert';}
-
-    }
-
     public function listerDossier()
     {
         $membre= DB::table('membres')
@@ -73,16 +60,6 @@ class DossiersController extends Controller
 
         return view('dossiers.liste_dossier', compact('membre', 'dossier_in'));
 
-    }
-
-    public function dossier_a_traiter()
-    {
-        return view('dossiers.traiter_dossier', compact('dossier'));
-
-    }
-    public function dossier_a_modifier(Membre $membre, DossierIn $dossier)
-    {
-        return view('dossiers.modifier_dossier', compact('membre', 'dossier'));
     }
 
     public function modifier_dossier(Request $request)
@@ -107,6 +84,39 @@ class DossiersController extends Controller
         $dossier_in->save();
 
          return redirect(route('tous_les_dossiers'));
+    }
+
+    public  function accorder_dossier(Request $request)
+    {
+
+    }
+    public  function rejeter_dossier(Request $request)
+    {
+            DossierOut::create([
+                'motif'=> $request->input('motif'),
+                'date_out'=>$request->input('date_out'),
+                'dossier_in_id'=>$request->input('dossier_in_id')
+                ]);
+
+        return redirect(route('home'));
+    }
+
+
+
+
+
+
+    public function type_credit($code)
+    {
+        if($code=='CT')
+        {return 'Crédit de Trésorerie';}
+        else if($code=='CS')
+        {return 'Crédit  Scolaire';}
+        else if($code=='MC')
+        {return 'Micro-Crédit';}
+        else if($code=='DE')
+        {return 'Découvert';}
+
     }
 
 }

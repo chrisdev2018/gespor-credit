@@ -8,7 +8,7 @@
     <h1>Liste des dossiers enregistrés</h1>
 
     <div class="list-dossiers">
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-info table-striped table-hover">
             <thead class="thead-dark">
             <tr >
                 <th>N° Compte</th>
@@ -30,7 +30,7 @@
                             <th>
                                 <a class="btn btn-info" title="Afficher plus de détails" data-toggle="modal" data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" >Détails</a>&nbsp;
                                 <a class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations">Modifier</a>&nbsp;
-                                <a href="{{route('dossier_a_traiter')}}" class="btn btn-primary" title="Traiter ce dossier">Traiter</a>
+                                <a class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" >Traiter</a>
                             </th>
                         </tr>
                     @endif
@@ -47,8 +47,11 @@
     @foreach($membre as $mem)
         @foreach($dossier_in as $dossier)
             @if($mem->id == $dossier->membre_id)
-                @include('dossiers.partials.detailsDossiers')
-                @include('dossiers.partials.modifierDossiers')
+                @include('dossiers.partials.detailsDossier')
+                @include('dossiers.partials.modifierDossier')
+                @include('dossiers.partials.traiterDossier')
+                @include('dossiers.partials.rejeterDossier')
+                @include('dossiers.partials.accorderDossier')
             @endif
         @endforeach
     @endforeach

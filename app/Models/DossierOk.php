@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DossierOk extends Model
 {
     protected $fillable=['mnt_ok', 'mnt_traite', 'duree',  'date_ok', 'dossier_in_id'];
+    public $timestamps=false;
 
     public function dossierIn()
     {

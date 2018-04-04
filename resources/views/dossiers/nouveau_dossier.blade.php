@@ -48,7 +48,7 @@
                     <label  class="col-4 col-form-label" >Type de crédit :</label>
                     <div class="col-7">
                         <select class="form-control" name="type_credit" id="type_credit" name="type_credit" required="required">
-                            <option value=""></option>
+                            <option value="" ></option>
                             <option value="CT">Crédit de trésorerie</option>
                             <option value="CS">Crédit scolaire</option>
                             <option value="MC">Micro-Crédit</option>
