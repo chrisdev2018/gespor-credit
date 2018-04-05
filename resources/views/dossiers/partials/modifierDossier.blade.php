@@ -1,6 +1,6 @@
 <!--Modal pour afficher le formulaire de modification -->
 <div  id="updateModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
         <div s class="modal-content">

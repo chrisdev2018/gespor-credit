@@ -1,6 +1,6 @@
 <!--Modal pour afficher le formulaire de validation d'un dossier -->
 <div  id="agreeModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
         <div  class="modal-content">

@@ -28,9 +28,9 @@
                             <th>{{$dossier->type_credit}}</th>
                             <th>{{$dossier->mnt_dmd}}</th>
                             <th>
-                                <a class="btn btn-info" title="Afficher plus de détails" data-toggle="modal" data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" >Détails</a>&nbsp;
-                                <a class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations">Modifier</a>&nbsp;
-                                <a class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" >Traiter</a>
+                                <a  class="btn btn-info " title="Afficher plus de détails" data-toggle="modal"  data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" >Détails</a>&nbsp;
+                                <a id="update{{$dossier->id}}" class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations">Modifier</a>&nbsp;
+                                <a id="process{{$dossier->id}}" class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" >Traiter</a>
                             </th>
                         </tr>
                     @endif
@@ -60,5 +60,25 @@
 
 @section('script')
     <!--script pour l'affichage des données dans la modal-->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+     $(document).ready(function () {
+
+       $.ajax( {
+
+                url: "{{route('check_status')}}",
+                dataType: "json",
+                type: "GET",
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                success: function (result) {
+                    for (var i = 0; i < result.length; i++) {
+                            $('#process' + i).addClass('disabled');
+                            $('#update' + i).addClass('disabled');
+                        }
+                    }
+                }
+                });
+      });
+
+    </script>
 @endsection

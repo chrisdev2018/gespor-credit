@@ -14,7 +14,7 @@
 
 
        <div class=" formulaire " >
-           <form  method="POST" action="{{route('store')}}" >
+           <form  method="POST" action="{{route('enregistrer_dossier')}}" >
                {{csrf_field() }}
                <div id="panel-client">
                    <div class="form-group row">
