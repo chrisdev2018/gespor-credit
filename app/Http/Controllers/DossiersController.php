@@ -6,8 +6,6 @@ use App\Models\DossierIn;
 use App\Models\DossierOk;
 use App\Models\DossierOut;
 use App\Models\Membre;
-use App\Utils\Dossier;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -100,7 +98,7 @@ class DossiersController extends Controller
                 'dossier_in_id'=>$request->input('dossier_in_id')
                 ]);
 
-        return redirect(route('home'));
+        return redirect(route('tous_les_dossiers'));
     }
 
     public function check_status()
@@ -137,7 +135,9 @@ class DossiersController extends Controller
                 }
             }
         }
-            return view('general.pageDeTest', compact('list_id'));
+
+
+            return response()->json($list_id);
     }
 
 
@@ -155,5 +155,18 @@ class DossiersController extends Controller
         {return 'Découvert';}
 
     }
+
+   /* public function generer_traites()
+    {
+        if(true)
+        {
+            return view('');
+        }
+
+        else
+        {
+            return view('error');
+        }
+    }*/
 
 }

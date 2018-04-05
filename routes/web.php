@@ -20,7 +20,6 @@ Route::get('/login', function () {
 //Route pour la page d'accueil
 Route::get('/', 'MainController@home')->name('home');
 
-
 //****************************Routes pour la section "dossiers" *********************************************
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');
     Route::post('Dossiers', 'DossiersController@enregistrer_dossier')->name('enregistrer_dossier');

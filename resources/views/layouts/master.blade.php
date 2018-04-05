@@ -13,7 +13,7 @@
 
     <!-- Custom styles design by me -->
     <link href="css/custom.css" rel="stylesheet">
-    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <!--<link href="css/fontawesome.min.css" rel="stylesheet"> -->
 
     @yield('styles')
 </head>

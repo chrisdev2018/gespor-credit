@@ -58,26 +58,25 @@
 
 @endsection
 
-@section('script')
+@section('scripts')
     <!--script pour l'affichage des données dans la modal-->
     <script type="text/javascript">
      $(document).ready(function () {
+         $.ajax( {
 
-       $.ajax( {
+             url: "{{route('check_status')}}",
+             dataType: "json",
+             type: "GET",
+             contentType: 'application/json; charset=utf-8',
+             cache: false,
+             success: function (result) {
+                 for (var i = 0; i < result.length; i++) {
+                     $('#process' + result[i]).addClass('disabled');
+                     $('#update' +result[i]).addClass('disabled');
+                 }
+             }
 
-                url: "{{route('check_status')}}",
-                dataType: "json",
-                type: "GET",
-                contentType: 'application/json; charset=utf-8',
-                cache: false,
-                success: function (result) {
-                    for (var i = 0; i < result.length; i++) {
-                            $('#process' + i).addClass('disabled');
-                            $('#update' + i).addClass('disabled');
-                        }
-                    }
-                }
-                });
+         });
       });
 
     </script>
