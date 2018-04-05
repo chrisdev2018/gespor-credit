@@ -23,13 +23,13 @@ Route::get('/', 'MainController@home')->name('home');
 
 //****************************Routes pour la section "dossiers" *********************************************
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');
-Route::post('Dossiers', 'DossiersController@store')->name('store');
+    Route::post('Dossiers', 'DossiersController@enregistrer_dossier')->name('enregistrer_dossier');
 
 Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_les_dossiers');
-Route::post('modifier', 'DossiersController@modifier_dossier')->name('modifier_dossier');
-Route::post('rejeter', 'DossiersController@rejeter_dossier')->name('rejeter_dossier');
-Route::post('accorder', 'DossiersController@accorder_dossier')->name('accorder_dossier');
-
+    Route::post('modifier', 'DossiersController@modifier_dossier')->name('modifier_dossier');
+    Route::post('rejeter', 'DossiersController@rejeter_dossier')->name('rejeter_dossier');
+    Route::post('accorder', 'DossiersController@accorder_dossier')->name('accorder_dossier');
+    Route::get('checkstatus', 'DossiersController@check_status')->name('check_status');
 
 
 

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use PhpParser\Node\Expr\Cast\Object_;
+use function Sodium\compare;
 
 class DossiersController extends Controller
 {
@@ -20,7 +21,7 @@ class DossiersController extends Controller
         return view('dossiers.nouveau_dossier');
     }
 
-    public function store(Request $request)
+    public function enregistrer_dossier(Request $request)
     {
 
             //on recupère les champs qui sont propres au membre
@@ -90,6 +91,7 @@ class DossiersController extends Controller
     {
 
     }
+
     public  function rejeter_dossier(Request $request)
     {
             DossierOut::create([
@@ -101,7 +103,42 @@ class DossiersController extends Controller
         return redirect(route('home'));
     }
 
+    public function check_status()
+    {
+        $list_id=array();
 
+        $dossier_ins = DB::table('dossier_ins')
+            ->get();
+
+        $dossier_oks = DB::table('dossier_oks')
+            ->get();
+
+        $dossier_outs = DB::table('dossier_outs')
+            ->get();
+
+        foreach ($dossier_ins as $dossier_in)
+        {
+            foreach ($dossier_oks as $dossier_ok)
+            {
+                if($dossier_in->id == $dossier_ok->dossier_in_id)
+                {
+                    $list_id[]=$dossier_in->id;
+                }
+            }
+        }
+
+        foreach ($dossier_ins as $dossier_in)
+        {
+            foreach ($dossier_outs as $dossier_out)
+            {
+                if($dossier_in->id == $dossier_out->dossier_in_id)
+                {
+                    $list_id[]=$dossier_in->id;
+                }
+            }
+        }
+            return view('general.pageDeTest', compact('list_id'));
+    }
 
 
 
