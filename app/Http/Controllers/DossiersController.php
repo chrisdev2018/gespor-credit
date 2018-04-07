@@ -170,3 +170,6 @@ class DossiersController extends Controller
     }*/
 
 }
+//TODO: gérer l'accord des dossiers (ce qui va avec la génération automatique des traites )
+//TODO: lister les dossiers accordés
+//TODO: lister les dossiers rejetés
