@@ -1,42 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Application de gestion du porte-feuille crédit ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GESPOR-CREDIT</title>
     <meta name="author" content="Christian FOMEKONG">
-    <link rel="icon" href="../../favicon.ico">
-    <title>@yield('title') | GESPOR-CREDIT</title>
+    <meta name="description" content="Application de gestion du porte-feuille crédit ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Custom styles design by me -->
-    <link href="css/custom.css" rel="stylesheet">
-    <!--<link href="css/fontawesome.min.css" rel="stylesheet"> -->
-
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     @yield('styles')
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
 </head>
-
 <body>
-    <div class="loader"></div>
 
-    <div class="container-fluid">
-        <div class="row">
-        @include('general.sidebar')
-            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main">
-                @include('general.navbar')
-               <div class="container corps">
-                   @yield('content')
-               </div>
-                @include('general.footer')
-            </main>
-        </div>
-    </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/app.js"></script>
-    @yield('scripts')
+        <!-- sidebar LEFT-PANEL -->
+            @include('general.sidebar')<!-- /#sidebar-->
+        <!-- sidebar -->
+
+        <!-- RIGHT-PANEL  -->
+
+            <div id="right-panel" class="right-panel">
+
+            <!-- Header-->
+            @include('general.header')
+            <!-- Header-->
+
+            <!-- breadcrumbs-->
+            @include('general.breadcrumbs')
+            <!-- breadcrumbs-->
+
+
+            <div class="content mt-3">
+                    @yield('content')
+            </div> <!-- .content -->
+
+            @include('general.footer')
+
+        </div><!-- /#right-panel -->
+        <!-- RIGHT-PANEL -->
+
+<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+@yield('scripts')
+
 </body>
 </html>

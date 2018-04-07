@@ -1,94 +1,68 @@
-<?php //TODO: rajouter les flèches pour le drill-drown?>
-<nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar" id="sidebar">
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
 
-    <div class=" app-title" >Système de gestion du porte-feuille de crédit </div>
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="/"><i class="fa fa-home"></i></a>
+        </div>
+            <br>
 
-    <br><br>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="{{route('home')}}"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord </a>
+                </li>
 
-    <hr>
-        <h5 class="menu-title"> <span class="oi oi-menu" ></span> MENU</h5>
-    <hr>
-    <ul class="nav nav-pills flex-column">
-        <a class="nav-link" href="#sousmenudossiers" data-toggle="collapse" ><i class=" fa fa-envelope "></i> &nbsp; Dossiers</a>
-        <ul class="collapse " id="sousmenudossiers">
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('nouveau_dossier')}}"><span class="oi oi-plus" ></span> Nouveau</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#sousmenulist" data-toggle="collapse" aria-expanded="false"><span class="oi oi-list" ></span> Lister les dossiers</a>
-                <ul class="collapse " id="sousmenulist">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('tous_les_dossiers')}}" ><span class="oi oi-action-redo" ></span> Arrivés</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <span class="oi oi-thumb-up" ></span> Accordés</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <span class="oi oi-thumb-down" ></span> Rejetés</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </ul>
-
-    <ul class="nav nav-pills flex-column">
-        <a class="nav-link" href="#sousmenusuivi" data-toggle="collapse" a > <span class="oi oi-briefcase" ></span>&nbsp; Suivi</a>
-        <ul  class="collapse " id="sousmenusuivi">
-            <li class="nav-item">
-                <a class="nav-link" href="#sousmenutraite" data-toggle="collapse" ><span class="oi oi-pencil" ></span> Payer une traite</a>
-                <ul class="collapse " id="sousmenutraite">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Crédit de trésorerie</a>
-                    </li>
-                    <li class="nav-item" >
-                        <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Crédit scolaire</a>
-                    </li>
-                    <li class="nav-item" >
-                        <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Microcrédit</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link" href="#"><span class="oi oi-pencil" ></span> Payer un découvert</a>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link" href="#"><span class="oi oi-circle-check" ></span> Echéancier</a>
-            </li>
-        </ul>
-    </ul>
-
-    <ul class="nav nav-pills flex-column">
-
-            <a class="nav-link" href="#sousmenurapports" data-toggle="collapse" ><span class="oi oi-clipboard" ></span>&nbsp; Rapports</a>
-            <ul class="collapse " id="sousmenurapports">
-                <li class="nav-item">
-                    <a class="nav-link" href="#sousmenuetats" data-toggle="collapse" ><span class="oi oi-file" ></span> Etats des prêts</a>
-                    <ul class="collapse " id="sousmenuetats">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Crédit de Trésorerie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Crédit Scolaire</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Micro-crédits</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><span class="oi oi-arrow-right" ></span> Découverts</a>
-                        </li>
+                <h3 class="menu-title">DOSSIERS</h3><!-- /.menu-title -->
+                <li>
+                    <a href="{{route('nouveau_dossier')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square"></i>Nouveau</a>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Lister les dossiers</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-share"></i><a href="{{route('tous_les_dossiers')}}">Arrivés</a></li>
+                        <li><i class="fa fa-thumbs-up"></i><a href="#">Accordés</a></li>
+                        <li><i class="fa fa-thumbs-down"></i><a href="#">Rejetés</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="oi oi-document" ></span> Porte-feuille à risque</a>
+
+                <h3 class="menu-title">SUIVI</h3><!-- /.menu-title -->
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Solder une traite</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Crédit de trésorerie</a></li>
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Crédit scolaire</a></li>
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Micro-Crédit</a></li>
+                    </ul>
                 </li>
+                <li>
+                    <a href="#"> <i class="menu-icon fa fa-money"></i>Solder un découvert </a>
+                </li>
+                <li>
+                    <a href="#"> <i class="menu-icon fa  fa-file-text"></i>Echéancier </a>
+                </li>
+
+                <h3 class="menu-title">RAPPORTS</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-clipboard"></i>Etats des prêts</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Crédit de trésorerie</a></li>
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Crédit scolaire</a></li>
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Micro-Crédit</a></li>
+                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Découvert</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-suitcase"></i>Porte-feuille à risque</a>
+
+                </li>
+
             </ul>
-
-    </ul>
-
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-            <a class="nav-link" href="test"><span class="oi oi-project" ></span>&nbsp; Général</a>
-        </li>
-    </ul>
-
-</nav>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>
