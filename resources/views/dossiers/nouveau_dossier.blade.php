@@ -53,10 +53,10 @@
                                 <div class="col-7">
                                     <select class="form-control standardSelect" name="type_credit" id="type_credit" name="type_credit" required="required">
                                         <option value="" ><small class="form-text text-muted">Faites votre choix</small></option>
-                                        <option value="CT">Crédit de trésorerie</option>
-                                        <option value="CS">Crédit scolaire</option>
+                                        <option value="CT">Credit de tresorerie</option>
+                                        <option value="CS">Credit scolaire</option>
                                         <option value="MC">Micro-Crédit</option>
-                                        <option value="DE">Découvert</option>
+                                        <option value="DE">Decouvert</option>
                                     </select>
                                 </div>
                             </div>

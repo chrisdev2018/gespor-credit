@@ -6,14 +6,14 @@ use App\Models\DossierIn;
 use App\Models\DossierOk;
 use App\Models\DossierOut;
 use App\Models\Membre;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use PhpParser\Node\Expr\Cast\Object_;
-use function Sodium\compare;
+
 
 class DossiersController extends Controller
 {
+
     public function displayForm()
     {
         return view('dossiers.nouveau_dossier');
@@ -88,6 +88,29 @@ class DossiersController extends Controller
     public  function accorder_dossier(Request $request)
     {
 
+        $debut=new Carbon($request->input('date_debut'));
+        $fin=new Carbon($request->input('date_fin'));
+
+
+        $nb_traites = $fin->diffInMonths($debut);
+
+
+       // dd($this->dates_traite($nb_traites, $debut));
+
+        $dossier_ok=DossierOk::create($request->all());
+
+        $dates_echeances=$this->dates_traite($nb_traites, $debut);
+
+        foreach ($dates_echeances as $dates)
+        {
+            $dossier_ok->traite()->create([
+                'date_passage'=>$dates,
+                'date_effective'=>$dates
+                ]);
+        }
+
+        return redirect(route('tous_les_dossiers'));
+
     }
 
     public  function rejeter_dossier(Request $request)
@@ -146,28 +169,29 @@ class DossiersController extends Controller
     public function type_credit($code)
     {
         if($code=='CT')
-        {return 'Crédit de Trésorerie';}
+        {return 'Credit de Tresorerie';}
         else if($code=='CS')
-        {return 'Crédit  Scolaire';}
+        {return 'Credit  Scolaire';}
         else if($code=='MC')
-        {return 'Micro-Crédit';}
+        {return 'Micro-Credit';}
         else if($code=='DE')
-        {return 'Découvert';}
+        {return 'Decouvert';}
 
     }
 
-   /* public function generer_traites()
-    {
-        if(true)
-        {
-            return view('');
-        }
 
-        else
-        {
-            return view('error');
-        }
-    }*/
+    public function dates_traite($nb, Carbon $date)
+    {
+          //  Carbon::useMonthsOverflow(false);
+        $tab=array();
+
+           for ($i=0; $i<($nb+1); $i++)
+           {
+               $tab[]=$date->copy()->addMonths($i);
+           }
+            return $tab;
+    }
+
 
 }
 //TODO: gérer l'accord des dossiers (ce qui va avec la génération automatique des traites )

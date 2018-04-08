@@ -17,6 +17,8 @@ Route::get('/login', function () {
 //list des actions
 
 
+
+
 //Route pour la page d'accueil
 Route::get('/', 'MainController@home')->name('home');
 
@@ -29,7 +31,7 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
     Route::post('rejeter', 'DossiersController@rejeter_dossier')->name('rejeter_dossier');
     Route::post('accorder', 'DossiersController@accorder_dossier')->name('accorder_dossier');
     Route::get('checkstatus', 'DossiersController@check_status')->name('check_status');
-
+    Route::get('test', 'DossiersController@test');
 
 
 

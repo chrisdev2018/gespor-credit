@@ -26,12 +26,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label  class="col-4 col-form-label">Durée du crédit :</label>
-                        <div class="col-7">
-                            <input class="form-control" type="text"   name="duree" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label  class="col-4 col-form-label">Date de début :</label>
                         <div class="col-7">
                             <input class="form-control" type="date" name="date_debut" required="required">
