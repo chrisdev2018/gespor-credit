@@ -13,3 +13,16 @@
 .content{
     padding-left: 30px;
 }
+
+.btn{
+    border-radius: 10px 10px 10px 10px ;
+
+}
+
+.card-header{
+    background-color: #23e7e2;
+}
+
+.formulaire{
+   margin-left: 100px;
+}
