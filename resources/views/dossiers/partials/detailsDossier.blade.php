@@ -1,6 +1,6 @@
 
 <!--Modal pour afficher les autres détails -->
-<div  id="detailsModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog">
+<div  id="detailsModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog" data-backdrop="static">
     <div class="modal-dialog">
 
         <!-- Modal content-->

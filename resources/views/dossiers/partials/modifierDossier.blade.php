@@ -1,5 +1,5 @@
 <!--Modal pour afficher le formulaire de modification -->
-<div  id="updateModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog">
+<div  id="updateModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog" data-backdrop="static">
     <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->

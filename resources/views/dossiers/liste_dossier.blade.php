@@ -61,8 +61,8 @@
 @section('scripts')
     <!--script pour l'affichage des données dans la modal-->
     <script type="text/javascript">
-     $(document).ready(function () {
-         $.ajax( {
+     jQuery(document).ready(function () {
+         jQuery.ajax( {
 
              url: "{{route('check_status')}}",
              dataType: "json",
@@ -71,9 +71,10 @@
              cache: false,
              success: function (result) {
                  for (var i = 0; i < result.length; i++) {
-                     $('#process' + result[i]).addClass('disabled');
-                     $('#update' +result[i]).addClass('disabled');
+                     jQuery('#process' + result[i]).addClass('disabled');
+                     jQuery('#update' +result[i]).addClass('disabled');
                  }
+                
              }
 
          });

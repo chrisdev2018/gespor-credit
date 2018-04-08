@@ -1,5 +1,5 @@
 <!--Modal pour afficher le formulaire de rejet d'un dossier -->
-<div  id="rejectModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog">
+<div  id="rejectModal{{$mem->id}}{{$dossier->id}}" class="modal fade" role="dialog" data-backdrop="static">
     <div class="modal-dialog">
 
         <!-- Modal content-->
