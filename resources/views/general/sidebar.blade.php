@@ -24,8 +24,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Lister les dossiers</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-share"></i><a href="{{route('tous_les_dossiers')}}">Arrivés</a></li>
-                        <li><i class="fa fa-thumbs-up"></i><a href="#">Accordés</a></li>
-                        <li><i class="fa fa-thumbs-down"></i><a href="#">Rejetés</a></li>
+                        <li><i class="fa fa-thumbs-up"></i><a href="{{route('lister_dossier_ok')}}">Accordés</a></li>
+                        <li><i class="fa fa-thumbs-down"></i><a href="{{route('lister_dossier_out')}}">Rejetés</a></li>
                     </ul>
                 </li>
 

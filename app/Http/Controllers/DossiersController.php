@@ -163,6 +163,28 @@ class DossiersController extends Controller
             return response()->json($list_id);
     }
 
+    public function lister_dossier_ok()
+    {
+        $list = DB::table('membres')
+            ->join('dossier_ins', 'dossier_ins.membre_id', '=', 'membres.id')
+            ->join('dossier_oks', 'dossier_oks.dossier_in_id', '=', 'dossier_ins.id')
+            ->get();
+
+        //dd($list);
+        return view('dossiers.liste_dossier_ok', compact('list'));
+    }
+
+    public function lister_dossier_out()
+    {
+        $list = DB::table('membres')
+            ->join('dossier_ins', 'dossier_ins.membre_id', '=', 'membres.id')
+            ->join('dossier_outs', 'dossier_outs.dossier_in_id', '=', 'dossier_ins.id')
+            ->get();
+
+        //dd($list);
+        return view('dossiers.liste_dossier_out', compact('list'));
+    }
+
 
 
 
@@ -194,6 +216,3 @@ class DossiersController extends Controller
 
 
 }
-//TODO: gérer l'accord des dossiers (ce qui va avec la génération automatique des traites )
-//TODO: lister les dossiers accordés
-//TODO: lister les dossiers rejetés

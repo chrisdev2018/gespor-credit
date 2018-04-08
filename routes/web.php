@@ -31,6 +31,8 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
     Route::post('rejeter', 'DossiersController@rejeter_dossier')->name('rejeter_dossier');
     Route::post('accorder', 'DossiersController@accorder_dossier')->name('accorder_dossier');
     Route::get('checkstatus', 'DossiersController@check_status')->name('check_status');
+    Route::get('lister_dossier_ok', 'DossiersController@lister_dossier_ok')->name('lister_dossier_ok');
+    Route::get('lister_dossier_out', 'DossiersController@lister_dossier_out')->name('lister_dossier_out');
     Route::get('test', 'DossiersController@test');
 
 
