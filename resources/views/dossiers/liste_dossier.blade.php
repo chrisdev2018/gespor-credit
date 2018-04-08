@@ -28,9 +28,9 @@
                             <th>{{$dossier->type_credit}}</th>
                             <th>{{$dossier->mnt_dmd}}</th>
                             <th>
-                                <a  class="btn btn-info " title="Afficher plus de détails" data-toggle="modal"  data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" >Détails</a>&nbsp;
-                                <a id="update{{$dossier->id}}" class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations">Modifier</a>&nbsp;
-                                <a id="process{{$dossier->id}}" class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" >Traiter</a>
+                                <a  class="btn btn-info " title="Afficher plus de détails" data-toggle="modal"  data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" ><i class="fa fa-eye"></i> Détails</a>&nbsp;
+                                <a id="update{{$dossier->id}}" class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations"><i class="fa fa-edit"></i> Modifier</a>&nbsp;
+                                <a id="process{{$dossier->id}}" class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" ><i class="fa fa-cogs"></i> Traiter</a>
                             </th>
                         </tr>
                     @endif
@@ -74,7 +74,7 @@
                      jQuery('#process' + result[i]).addClass('disabled');
                      jQuery('#update' +result[i]).addClass('disabled');
                  }
-                
+
              }
 
          });
