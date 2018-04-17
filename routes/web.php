@@ -39,7 +39,7 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
 
 //****************************Routes pour la section " suivi" ***************************************************
 
-
+Route::get('echeancier', 'SuiviController@echeancier')->name('echeancier');
 
 
 

@@ -43,7 +43,7 @@
                     <a href="#"> <i class="menu-icon fa fa-money"></i>Solder un découvert </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa  fa-file-text"></i>Echéancier </a>
+                    <a href="{{route('echeancier')}}"> <i class="menu-icon fa  fa-file-text"></i>Gestion des échéancier </a>
                 </li>
 
                 <h3 class="menu-title">RAPPORTS</h3><!-- /.menu-title -->
