@@ -35,9 +35,9 @@
                                     <td>{{$dossier->type_credit}}</td>
                                     <td>{{$dossier->mnt_dmd}}</td>
                                     <td>
-                                        <a  class="btn btn-info " title="Afficher plus de détails" data-toggle="modal"  data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" ><i class="fa fa-eye"></i> Détails</a>&nbsp;
-                                        <a id="update{{$dossier->id}}" class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations"><i class="fa fa-edit"></i> Modifier</a>&nbsp;
-                                        <a id="process{{$dossier->id}}" class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" ><i class="fa fa-cogs"></i> Traiter</a>
+                                        <a  class="btn btn-info " title="Afficher plus de détails" data-toggle="modal"  data-target="#detailsModal{{$mem->id}}{{$dossier->id}}" ><i class="fa fa-eye"></i> </a>&nbsp;
+                                        <a id="update{{$dossier->id}}" class="btn btn-warning" data-toggle="modal" data-target="#updateModal{{$mem->id}}{{$dossier->id}}"   title="Modifier les informations"><i class="fa fa-edit"></i> </a>&nbsp;
+                                        <a id="process{{$dossier->id}}" class="btn btn-primary" title="Traiter ce dossier" data-toggle="modal" data-target="#processModal{{$mem->id}}{{$dossier->id}}" ><i class="fa fa-cogs"></i> </a>
                                     </td>
                                 </tr>
                             @endif
