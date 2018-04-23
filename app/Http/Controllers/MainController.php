@@ -20,8 +20,9 @@ class MainController extends Controller
 
 
 
-    public function test()
+    public function test($test)
     {
+        dd($test);
         return view('test');
     }
 

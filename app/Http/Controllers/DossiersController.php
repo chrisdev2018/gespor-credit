@@ -9,10 +9,12 @@ use App\Models\Membre;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Traits\Helpers;
 
 
 class DossiersController extends Controller
 {
+    use Helpers;
 
     public function displayForm()
     {
@@ -183,22 +185,6 @@ class DossiersController extends Controller
 
         //dd($list);
         return view('dossiers.liste_dossier_out', compact('list'));
-    }
-
-
-
-
-    public function type_credit($code)
-    {
-        if($code=='CT')
-        {return 'Credit de Tresorerie';}
-        else if($code=='CS')
-        {return 'Credit  Scolaire';}
-        else if($code=='MC')
-        {return 'Micro-Credit';}
-        else if($code=='DE')
-        {return 'Decouvert';}
-
     }
 
 

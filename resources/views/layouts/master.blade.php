@@ -11,6 +11,7 @@
     <meta name="author" content="Christian FOMEKONG">
     <meta name="description" content="Application de gestion du porte-feuille crédit ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
@@ -61,6 +62,16 @@
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+   jQuery.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+        }
+    } );
+</script>
+
+
 @yield('scripts')
 
 </body>

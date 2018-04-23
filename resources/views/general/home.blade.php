@@ -2,37 +2,34 @@
 
 
 @section('title', 'Accueil')
+@section('styles')
+    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+@endsection
 
 
 @section('content')
-
-    <h1>Tableau de bord</h1>
-
-    <button style="color:red" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button >
-
-    <!-- Modal -->
-    <div style="color:red" id="myModal" class="modal fade" role="dialog">
-        <div style="color:red" class="modal-dialog">
-
-            <!-- Modal content-->
-            <div style="color:red" class="modal-content">
-                <div style="color:red" class="modal-header">
-
-                    <h4 style="color:red" class="modal-title">Modal Header</h4>
-                </div >
-                <div style="color:red" class="modal-body">
-                    <p style>Some text in the modal.</p>
-                </div >
-                <div style="color:red" class="modal-footer">
-                    <button style="color:red" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div >
-            </div >
-
-        </div >
-    </div >
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>World</h4>
+            </div>
+            <div class="Vector-map-js">
+                <div id="vmap" class="vmap"></div>
+            </div>
+        </div>
+        <!-- /# card -->
+    </div>
 
 
 @endsection
 
 @section('script')
+
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <script src="assets/js/lib/vector-map/vector.init.js"></script>
 @endsection

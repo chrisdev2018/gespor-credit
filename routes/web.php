@@ -21,6 +21,7 @@ Route::get('/login', function () {
 
 //Route pour la page d'accueil
 Route::get('/', 'MainController@home')->name('home');
+Route::get('test/{id}', 'MainController@test');
 
 //****************************Routes pour la section "dossiers" *********************************************
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');
@@ -33,13 +34,15 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
     Route::get('checkstatus', 'DossiersController@check_status')->name('check_status');
     Route::get('lister_dossier_ok', 'DossiersController@lister_dossier_ok')->name('lister_dossier_ok');
     Route::get('lister_dossier_out', 'DossiersController@lister_dossier_out')->name('lister_dossier_out');
-    Route::get('test', 'DossiersController@test');
+
 
 
 
 //****************************Routes pour la section " suivi" ***************************************************
 
-Route::get('echeancier', 'SuiviController@echeancier')->name('echeancier');
+Route::get('echeancier', 'SuiviController@home')->name('echeancier');
+Route::post('type_credit/{type_credit}', 'SuiviController@list_membre')->name('type_credit');
+
 
 
 
