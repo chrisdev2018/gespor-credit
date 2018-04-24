@@ -54,8 +54,6 @@ class SuiviController extends Controller
 
         $echeancier = ['dossier'=>$dossier, 'list_traites'=>$list_traites];
 
-//dd($echeancier);
-
         return response()->json($echeancier);
     }
 }

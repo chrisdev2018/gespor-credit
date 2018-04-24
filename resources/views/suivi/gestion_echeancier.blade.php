@@ -3,6 +3,7 @@
 @section('title', 'Gestion des échéanciers')
 
 
+
 @section('content')
     <div class="card " >
 
@@ -49,6 +50,17 @@
 @section('scripts')
     <script type="text/javascript">
 
+        function statut (valeur){
+            if(valeur==0)
+            {
+                return "Impayée";
+            }
+            else if (valeur==1)
+            {
+                return "Payée";
+            }
+        }
+
         jQuery(document).ready(function () {
 
             jQuery("#type_credit").on('change', function () {
@@ -74,7 +86,7 @@
 
             jQuery("#submit").on('click', function () {
 
-                jQuery('#card-echeancier').hide();
+               jQuery('#card-echeancier').hide();
 
                 var type_credit = jQuery('#type_credit').val();
                 var membre = jQuery('#membre').val();
@@ -84,7 +96,7 @@
                         type: 'POST',
                         dataType: 'json',
                         success: function (result) {
-                            jQuery('#card-echeancier').show();
+
 
                             //ici on rempli les informations de l'entête de notre echeancier
 
@@ -95,6 +107,27 @@
                             jQuery('#_date_prem').html(result['dossier'][0].date_debut);
                             jQuery('#_date_dern').html(result['dossier'][0].date_fin);
                             jQuery('#_nbreEche').html();
+
+                            /******************************************/
+                            //ici on va remplir le tableau
+                            var i=1;
+                            jQuery('#tbody').empty();
+
+                            jQuery(result['list_traites']).each(function(){
+                                jQuery('#tbody').append("<tr>"+
+                                        "<td>"+i+"</td>"+
+                                        "<td>"+this.date_passage+"</td>"+
+                                        "<td>"+result['dossier'][0].mnt_traite+"</td>"+
+                                        "<td>"+this.date_effective+"</td>"+
+                                        "<td>"+this.mnt_effectif+"</td>"+
+                                        "<td>"+statut(this.statut)+"</td>"+
+                                        "<td>"+this.retard+"</td>"+
+                                "<tr>" );
+                                i++;
+                            });
+
+
+                            jQuery('#card-echeancier').show();
                         }
                     });
 

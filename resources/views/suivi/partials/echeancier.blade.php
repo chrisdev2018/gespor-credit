@@ -47,19 +47,19 @@
     </div>
 
     <div class="card-body">
-        <table class="table table-striped ">
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>N° Ech</th>
-                    <th>Date Ech</th>
-                    <th>Montant Ech</th>
+                    <th>N° Traite</th>
+                    <th>Date Traite</th>
+                    <th>Montant Traite</th>
                     <th>Date effective </th>
                     <th>Montant réglé</th>
+                    <th>Statut</th>
                     <th>Retard (jours)</th>
-                    <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody">
 
             </tbody>
 
