@@ -41,7 +41,8 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
 //****************************Routes pour la section " suivi" ***************************************************
 
 Route::get('echeancier', 'SuiviController@home')->name('echeancier');
-Route::post('type_credit/{type_credit}', 'SuiviController@list_membre')->name('type_credit');
+Route::post('type_credit/{type_credit}', 'SuiviController@list_membre');
+Route::post('echeancier/{type_credit}/{id_membre}', 'SuiviController@echeancier');
 
 
 

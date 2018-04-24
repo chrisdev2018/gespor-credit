@@ -42,11 +42,7 @@
                     <strong>Date dernière échéance</strong>
                 </label> : <label id="_date_dern"></label>
             </span><br>
-            <span>
-                <label>
-                    <strong>Date de validation</strong>
-                </label> : <label id="_date_validation"></label>
-            </span>
+
         </div>
     </div>
 

@@ -8,7 +8,7 @@
 
         <div class="card-body">
             <br>
-            <form method="POST" action="#">
+            <form >
                 {{csrf_field() }}
 
                 <div class="row justify-content-center">
@@ -24,13 +24,13 @@
                     <div class=" form-group col-6 row">
                         <label  class="col-4 col-form-label">Membre : </label>
                         <select class="form-control col-5" type="text"  id="membre" name="membre" required="required">
-                            <option value="" ><small class="form-text text-muted">Faites votre choix</small></option>
+                            <option  value="" ><small class="form-text text-muted">Faites votre choix</small></option>
                         </select>
                     </div>
                 </div>
                 <br>
                 <div class="form-group row  justify-content-center" id="buttons-form">
-                    <button type="submit" class=" btn btn-success" id="submit"> Afficher l'échéancier</button>
+                    <button  class=" btn btn-success" id="submit"> Afficher l'échéancier</button>
                 </div>
 
             </form>
@@ -68,6 +68,37 @@
 
                     }
                 });
+                return false;
+            });
+
+
+            jQuery("#submit").on('click', function () {
+
+                jQuery('#card-echeancier').hide();
+
+                var type_credit = jQuery('#type_credit').val();
+                var membre = jQuery('#membre').val();
+
+                    jQuery.ajax({
+                        url: "echeancier/"+type_credit+"/"+membre,
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function (result) {
+                            jQuery('#card-echeancier').show();
+
+                            //ici on rempli les informations de l'entête de notre echeancier
+
+                            jQuery('#_nom_prenom').html(result['dossier'][0].nom+' '+result['dossier'][0].prenom);
+                            jQuery('#_num_compte').html(result['dossier'][0].num_cpte);
+                            jQuery('#_type_credit').html(result['dossier'][0].type_credit);
+                            jQuery('#_montant').html(result['dossier'][0].mnt_ok);
+                            jQuery('#_date_prem').html(result['dossier'][0].date_debut);
+                            jQuery('#_date_dern').html(result['dossier'][0].date_fin);
+                            jQuery('#_nbreEche').html();
+                        }
+                    });
+
+
                 return false;
             });
 
