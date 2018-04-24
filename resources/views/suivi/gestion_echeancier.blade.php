@@ -62,6 +62,7 @@
         }
 
         jQuery(document).ready(function () {
+            jQuery("#card-echeancier").hide();
 
             jQuery("#type_credit").on('change', function () {
 
