@@ -32,7 +32,7 @@
                 <h3 class="menu-title">SUIVI</h3><!-- /.menu-title -->
 
                 <li>
-                    <a href="{{route('traites_en_cours')}}" > <i class="menu-icon fa fa-money"></i>Solder une traite</a>
+                    <a href="{{route('choix_traites')}}" > <i class="menu-icon fa fa-money"></i>Solder une traite</a>
 
                 </li>
                 <li>

@@ -15,11 +15,6 @@
 
         </div>
         <div class="card-body">
-                <div class="justify-content-center row">
-                    <label  class="col-2 col-form-label">A la date du : </label>
-                    <input class="form-control col-3" type="date"  id="date" required="required">
-                </div><br><br>
-
 
             <table id="bootstrap-data-table" class="table table-bordered table-striped table-hover">
                 <thead>
