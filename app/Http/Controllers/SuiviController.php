@@ -58,7 +58,7 @@ class SuiviController extends Controller
         return response()->json($echeancier);
     }
 
-    public function traites_en_cours()
+    public function traites_en_cours(Request $request)
     {
        $result = DB::table('membres')
             ->join('dossier_ins', 'dossier_ins.membre_id', '=', 'membres.id')
@@ -70,31 +70,7 @@ class SuiviController extends Controller
 
         foreach($result as $res)
         {
-            if($this->format(new Carbon($res->date_passage) )== $this->format(Carbon::now()) )
-            {
-                $traites[]=$res;
-            }
-        }
-
-        return view('suivi.traites_en_cours', compact('traites'));
-    }
-
-    public function _traites_en_cours($date)
-    {
-
-        $date = new Carbon($date);
-
-       $result = DB::table('membres')
-            ->join('dossier_ins', 'dossier_ins.membre_id', '=', 'membres.id')
-            ->join('dossier_oks', 'dossier_oks.dossier_in_id', '=', 'dossier_ins.id')
-           ->join('traites', 'traites.dossier_ok_id','=', 'dossier_oks.id')
-            ->get();
-
-        $traites=array();
-
-        foreach($result as $res)
-        {
-            if($this->format(new Carbon($res->date_passage) )== $this->format($date) )
+            if($this->format(new Carbon($res->date_passage) )== $this->format(new Carbon($request->input('date'))) )
             {
                 $traites[]=$res;
             }
@@ -158,6 +134,11 @@ class SuiviController extends Controller
 
 
         return redirect(route('traites_en_cours'));
+    }
+
+    public function choix_traites()
+    {
+        return view('suivi.choix_traites');
     }
 
 
