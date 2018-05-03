@@ -43,11 +43,10 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
 Route::get('echeancier', 'SuiviController@home')->name('echeancier');
 Route::post('type_credit/{type_credit}', 'SuiviController@list_membre');
 Route::post('echeancier/{type_credit}/{id_membre}', 'SuiviController@echeancier');
-Route::get('traites_en_cours', 'SuiviController@traites_en_cours')->name("traites_en_cours");
-Route::post('_traites_en_cours/{$date}', 'SuiviController@traites_en_cours');
+Route::post('traites_en_cours', 'SuiviController@traites_en_cours')->name("traites_en_cours");
 Route::post('solder_traite', 'SuiviController@solder_traite')->name("solder_traite");
 
-
+Route::get('choix_traites', 'SuiviController@choix_traites')->name("choix_traites");
 
 
 Route::get('decouverts_en_cours', 'SuiviController@decouverts_en_cours')->name("decouverts_en_cours");
@@ -61,9 +60,3 @@ Route::get('decouverts_en_cours', 'SuiviController@decouverts_en_cours')->name("
 Route::get('choix_etat', 'RapportsController@choix_etat')->name("choix_etat");
 
 Route::post('afficher_etat', 'RapportsController@afficher_etat')->name("afficher_etat");
-
-Route::get('etats_credit-tresorerie', 'RapportsController@etats_CT')->name("etats_CT");
-
-Route::get('etats_credit-scolaire', 'RapportsController@etats_CS')->name("etats_CS");
-
-Route::get('etats_micro-credit', 'RapportsController@etats_MC')->name("etats_MC");
