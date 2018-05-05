@@ -39,3 +39,10 @@ td{
 .smallCard{
     padding-left: 50px;
 }
+
+.login_error{
+ font-family: Ubuntu;
+    text-align: center;
+    color: red;
+    font-style: italic;
+}
