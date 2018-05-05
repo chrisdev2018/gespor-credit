@@ -10,17 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/login', function () {
-    return view('welcome');
-});*/
-//list des actions
+
+
 
 
 
 
 //Route pour la page d'accueil
-Route::get('/', 'MainController@home')->name('home');
+Route::get('/', 'MainController@entry');
+Route::post('/', 'MainController@login')->name('login');
+Route::get('home', 'MainController@home')->name('home');
 Route::get('test', 'MainController@test');
 
 //****************************Routes pour la section "dossiers" *********************************************
