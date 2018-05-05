@@ -5,7 +5,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Logo"></a>
+            <a class="navbar-brand" href="{{route('home')}}"><img src="images/logo.png" alt="Logo"></a>
             <a class="navbar-brand hidden" href="/"><i class="fa fa-home"></i></a>
         </div>
             <br>
@@ -13,7 +13,7 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="{{route('home')}}"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord </a>
+                    <a href="{{route('dashboard')}}"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord </a>
                 </li>
 
                 <h3 class="menu-title">DOSSIERS</h3><!-- /.menu-title -->

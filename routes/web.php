@@ -20,6 +20,7 @@
 Route::get('/', 'MainController@entry');
 Route::post('/', 'MainController@login')->name('login');
 Route::get('home', 'MainController@home')->name('home');
+Route::get('dashboard', 'MainController@dashboard')->name('dashboard');
 Route::get('test', 'MainController@test');
 
 //****************************Routes pour la section "dossiers" *********************************************

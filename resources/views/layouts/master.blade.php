@@ -53,7 +53,9 @@
                     @yield('content')
             </div> <!-- .content -->
 
-            @include('general.footer')
+          @include('general.footer')
+
+
 
         </div><!-- /#right-panel -->
         <!-- RIGHT-PANEL -->
