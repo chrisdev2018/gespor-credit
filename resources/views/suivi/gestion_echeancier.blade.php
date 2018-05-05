@@ -5,8 +5,10 @@
 
 
 @section('content')
-    <div class="card " >
+    <div class="card animated fadeIn" >
+        <div class="card-header">
 
+        </div>
         <div class="card-body">
             <br>
             <form >

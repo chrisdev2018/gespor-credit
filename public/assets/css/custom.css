@@ -24,7 +24,7 @@
     background: url("/images/bgcard.png");
 }
 
-.formulaire{
+.card-form{
    margin-left: 100px;
 }
 
@@ -34,4 +34,8 @@
 
 td{
     text-align: center;
+}
+
+.smallCard{
+    padding-left: 50px;
 }

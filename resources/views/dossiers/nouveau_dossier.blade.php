@@ -12,8 +12,8 @@
 @section('content')
 
 
-       <div class="col-lg-8 formulaire" >
-            <div class="card ">
+       <div class="col-lg-8 card-form" >
+            <div class="card animated fadeInLeft">
                 <div class="card-header">
                     <strong>Remlpir le formulaire</strong>
                 </div>
