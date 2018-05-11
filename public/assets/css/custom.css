@@ -46,3 +46,16 @@ td{
     color: red;
     font-style: italic;
 }
+
+.footer
+{
+    border-radius: 5px 5px 5px 5px; ;
+    height: auto;
+    text-align: center;
+    color: lightgrey;
+    background-color: #390539;
+    font-style: italic;
+    font-family: "Fira Mono";
+    margin-top: 2px;
+
+}

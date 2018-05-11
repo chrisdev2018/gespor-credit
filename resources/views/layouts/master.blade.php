@@ -52,7 +52,7 @@
             <div class="content mt-3">
                     @yield('content')
             </div> <!-- .content -->
-
+                <p class="clearfix"></p>
           @include('general.footer')
 
 

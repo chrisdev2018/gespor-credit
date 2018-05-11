@@ -5,7 +5,13 @@
 @section('styles')
     <style>
         #demo{
-            margin-left: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .carousel-inner img{
+            width: 100%;
+            border-radius: 10px 10px 10px 10px;
+
         }
     </style>
 @endsection
@@ -31,25 +37,25 @@
     <!-- The slideshow -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="images/homepage/analyse.png" alt="Los Angeles" width="1100" height="500">
+            <img src="images/homepage/analyse.png" alt="Los Angeles" width="1000" height="500">
         </div>
         <div class="carousel-item">
-            <img src="images/homepage/analyse2.png" alt="Chicago" width="1100" height="500">
+            <img src="images/homepage/analyse2.png" alt="Chicago" width="1000" height="500">
         </div>
         <div class="carousel-item">
-            <img src="images/homepage/atravailler.png" alt="New York" width="1100" height="500">
+            <img src="images/homepage/atravailler.png" alt="New York" width="1000" height="500">
         </div>
         <div class="carousel-item">
-            <img src="images/homepage/calculs.png" alt="New York" width="1100" height="500">
+            <img src="images/homepage/calculs.png" alt="New York" width="1000" height="500">
         </div>
         <div class="carousel-item">
-            <img src="images/homepage/cropped-outils-gestion-de-projet1.jpg" alt="New York" width="1100" height="500">
+            <img src="images/homepage/cropped-outils-gestion-de-projet1.jpg" alt="New York" width="1000" height="500">
         </div>
         <div class="carousel-item">
-            <img src="images/homepage/resultats.png" alt="New York" width="1100" height="500">
+            <img src="images/homepage/resultats.png" alt="New York" width="1000" height="500">
         </div>
         <div class="carousel-item">
-            <img src="images/homepage/super.png" alt="New York" width="1100" height="500">
+            <img src="images/homepage/super.png" alt="New York" width="1000" height="500">
         </div>
     </div>
 
