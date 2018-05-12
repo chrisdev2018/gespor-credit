@@ -49,13 +49,13 @@ td{
 
 .footer
 {
-    border-radius: 5px 5px 5px 5px; ;
     height: auto;
     text-align: center;
     color: lightgrey;
-    background-color: #390539;
+    background-color: rgba(7, 3, 7, 0.84);
     font-style: italic;
     font-family: "Fira Mono";
     margin-top: 2px;
+    margin-bottom: 0px;
 
 }
