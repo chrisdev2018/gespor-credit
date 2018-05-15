@@ -11,17 +11,13 @@
 |
 */
 
-
-
+Auth::routes();
 
 
 
 //Route pour la page d'accueil
-Route::get('/', 'MainController@entry');
-Route::post('/', 'MainController@login')->name('login');
-Route::get('home', 'MainController@home')->name('home');
-Route::get('dashboard', 'MainController@dashboard')->name('dashboard');
-Route::get('test', 'MainController@test');
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('dashboard', 'HomeController@dashboard')->name('dashboard');
 
 //****************************Routes pour la section "dossiers" *********************************************
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');

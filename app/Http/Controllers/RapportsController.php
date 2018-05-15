@@ -11,6 +11,11 @@ class RapportsController extends Controller
 {
     use Helpers;
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function afficher_etat(Request $request)
     {
         $type_credit=$this->type_credit($request->input('type_credit'));

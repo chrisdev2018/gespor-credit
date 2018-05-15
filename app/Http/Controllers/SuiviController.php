@@ -13,6 +13,10 @@ class SuiviController extends Controller
     use Helpers;
 
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function home()
     {
