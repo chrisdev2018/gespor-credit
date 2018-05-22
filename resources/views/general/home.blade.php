@@ -5,8 +5,8 @@
 @section('styles')
     <style>
         #demo{
-            margin-left: 20px;
-            margin-right: 20px;
+           /* margin-left: 20px;*/
+           /* margin-right: 20px;*/
         }
         .carousel-inner img{
             width: 100%;
@@ -18,6 +18,13 @@
 
 
 @section('content')
+
+    @if ( session()->has('message'))
+        <div class="alert alert-danger alert-block">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{ session()->get('message') }}</strong>
+        </div>
+    @endif
 
 
 
