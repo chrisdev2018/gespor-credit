@@ -825,17 +825,18 @@ textarea {
   width: 100%; }
 
 aside.left-panel {
-  background: #272c33;
+ /*background: #072022; couleur originale*/
+ background: url("/images/sbbg2.png");
   display: table-cell;
   height: 100vh;
   min-height: 100%;
   padding: 0 25px;
   vertical-align: top;
   width: 280px;
-  transition: width 0.3s ease; }
+  transition: width 0.3s ease;  }
 
 .navbar {
-  background: #272c33;
+  /*background: #6b401e;*/
   border-radius: 0;
   border: none;
   display: block;

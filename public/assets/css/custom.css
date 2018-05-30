@@ -20,7 +20,8 @@
 }
 
 .card-header{
-    background-color: #23e7e2;
+   /* background-color: #23e7e2;*/
+    background: url("/images/bgcard.png");
 }
 
 .formulaire{
