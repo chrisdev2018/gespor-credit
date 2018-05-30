@@ -21,7 +21,7 @@ Route::get('/login', function () {
 
 //Route pour la page d'accueil
 Route::get('/', 'MainController@home')->name('home');
-Route::get('test/{id}', 'MainController@test');
+Route::get('test', 'MainController@test');
 
 //****************************Routes pour la section "dossiers" *********************************************
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');
@@ -43,6 +43,15 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
 Route::get('echeancier', 'SuiviController@home')->name('echeancier');
 Route::post('type_credit/{type_credit}', 'SuiviController@list_membre');
 Route::post('echeancier/{type_credit}/{id_membre}', 'SuiviController@echeancier');
+Route::get('traites_en_cours', 'SuiviController@traites_en_cours')->name("traites_en_cours");
+Route::post('_traites_en_cours/{$date}', 'SuiviController@traites_en_cours');
+Route::post('solder_traite', 'SuiviController@solder_traite')->name("solder_traite");
+
+
+
+
+Route::get('decouverts_en_cours', 'SuiviController@decouverts_en_cours')->name("decouverts_en_cours");
+
 
 
 

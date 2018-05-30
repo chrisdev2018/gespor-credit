@@ -1,4 +1,4 @@
-<div class="card" id="card-echeancier" >
+<div class="card " id="card-echeancier" >
 
     <div class="card-header">
         <div class="row justify-content-center">

@@ -31,16 +31,12 @@
 
                 <h3 class="menu-title">SUIVI</h3><!-- /.menu-title -->
 
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Solder une traite</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Crédit de trésorerie</a></li>
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Crédit scolaire</a></li>
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Micro-Crédit</a></li>
-                    </ul>
+                <li>
+                    <a href="{{route('traites_en_cours')}}" > <i class="menu-icon fa fa-money"></i>Solder une traite</a>
+
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-money"></i>Solder un découvert </a>
+                    <a href="{{route('decouverts_en_cours')}}"> <i class="menu-icon fa fa-money"></i>Solder un découvert </a>
                 </li>
                 <li>
                     <a href="{{route('echeancier')}}"> <i class="menu-icon fa  fa-file-text"></i>Gestion des échéancier </a>

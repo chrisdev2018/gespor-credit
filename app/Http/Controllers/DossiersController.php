@@ -172,7 +172,6 @@ class DossiersController extends Controller
             ->join('dossier_oks', 'dossier_oks.dossier_in_id', '=', 'dossier_ins.id')
             ->get();
 
-        //dd($list);
         return view('dossiers.liste_dossier_ok', compact('list'));
     }
 
@@ -190,7 +189,6 @@ class DossiersController extends Controller
 
     public function dates_traite($nb, Carbon $date)
     {
-          //  Carbon::useMonthsOverflow(false);
         $tab=array();
 
            for ($i=0; $i<($nb+1); $i++)

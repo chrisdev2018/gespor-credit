@@ -9,10 +9,13 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use App\Traits\Helpers;
 
 
 class MainController extends Controller
 {
+    use Helpers;
     public function home()
     {
         return view('general.home');
@@ -20,10 +23,9 @@ class MainController extends Controller
 
 
 
-    public function test($test)
+    public function test()
     {
-        dd($test);
-        return view('test');
+
     }
 
 }

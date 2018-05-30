@@ -7,6 +7,7 @@
  */
 
 namespace App\Traits;
+use Carbon\Carbon;
 
    trait Helpers
     {
@@ -22,4 +23,11 @@ namespace App\Traits;
             {return 'Decouvert';}
 
         }
+
+        public function format(Carbon $date)
+        {
+            return $date->format('m-Y');
+        }
+
+
     }
