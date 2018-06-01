@@ -19,13 +19,6 @@
 
 @section('content')
 
-    @if ( session()->has('message'))
-        <div class="alert alert-danger alert-block">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>{{ session()->get('message') }}</strong>
-        </div>
-    @endif
-
 
 
 <div id="demo" class="carousel slide" data-ride="carousel">
