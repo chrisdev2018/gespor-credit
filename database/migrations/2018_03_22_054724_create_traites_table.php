@@ -20,6 +20,7 @@ class CreateTraitesTable extends Migration
             $table->bigInteger('mnt_effectif');
             $table->date('date_effective');
             $table->integer('retard')->unsigned();
+            $table->integer('solde_debut_debiteur')->default(0);
             $table->integer('dossier_ok_id')->unsigned();
 
 
