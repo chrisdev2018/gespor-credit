@@ -16,6 +16,14 @@
                     <a href="{{route('dashboard')}}"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord </a>
                 </li>
 
+                <h3 class="menu-title">MEMBRES</h3><!-- /.menu-title -->
+                <li>
+                    <a href="{{route('nouveau_membre')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square"></i>Nouveau Membre</a>
+                </li>
+                <li>
+                    <a href="{{route('liste_membres')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Lister les membres</a>
+                </li>
+
                 <h3 class="menu-title">DOSSIERS</h3><!-- /.menu-title -->
                 <li>
                     <a href="{{route('nouveau_dossier')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square"></i>Nouveau</a>

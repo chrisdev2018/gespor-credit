@@ -19,6 +19,14 @@ Auth::routes();
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('dashboard', 'HomeController@dashboard')->name('dashboard');
 
+
+//******************Pour la gestion des membres
+Route::get('nouveau_membre', 'MembresController@displayForm')->name('nouveau_membre');
+Route::post('enregistrer', 'MembresController@store')->name('enregistrer_membre');
+Route::get('liste_membre', 'MembresController@list')->name('liste_membres');
+Route::get('modifier_membre', 'MembresController@update')->name('modifier_membre');
+
+
 //****************************Routes pour la section "dossiers" *********************************************
 Route::get('Dossiers_new', 'DossiersController@displayForm')->name('nouveau_dossier');
     Route::post('Dossiers', 'DossiersController@enregistrer_dossier')->name('enregistrer_dossier');
