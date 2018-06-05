@@ -34,6 +34,21 @@ class MembresController extends Controller
 
     public function list()
     {
-        return view('membres.liste_membres');
+        $membres = DB::table('membres')->get();
+        return view('membres.liste_membres', compact('membres'));
+    }
+
+    public function update(Request $request)
+    {
+        //mise à jour de la table membre
+        $membre = Membre::find($request->input('idmembre'));
+        $membre->nom = $request->nom;
+        $membre->prenom = $request->prenom;
+        $membre->telephone = $request->telephone;
+        $membre->num_cpte = $request->num_cpte;
+        $membre->save();
+
+        return redirect(route('liste_membres'));
+
     }
 }
