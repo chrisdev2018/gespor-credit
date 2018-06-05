@@ -23,37 +23,23 @@ class DossiersController extends Controller
 
     public function displayForm()
     {
-        return view('dossiers.nouveau_dossier');
+        $membres = DB::table('membres')->get();
+
+        return view('dossiers.nouveau_dossier', compact('membres'));
     }
 
     public function enregistrer_dossier(Request $request)
     {
-
-            //on recupère les champs qui sont propres au membre
-       $membres = [
-            'nom'=> $request->input('nom'),
-            'prenom'=>$request->input('prenom'),
-            'telephone'=>$request->input('telephone'),
-            'num_cpte'=>$request->input('num_cpte')
-        ];
-
         //on recupère les champs qui sont spéfiques au dossier
        $dossiers=[
            'mnt_dmd'=>$request->input('mnt_dmd'),
            'date_in'=>$request->input('date_in'),
            'garantie'=>$request->input('garantie'),
-           'type_credit'=>$this->type_credit($request->input('type_credit'))
+           'type_credit'=>$this->type_credit($request->input('type_credit')),
+           'membre_id'=>$request->input('membre_id')
        ];
 
-        //on enregistre le membre
-        $membre=Membre::create($membres); // ici on a toutes les informations sur le membre qu'in vient d'enregistrer ainsi que son ID
-
-        $dossier=$membre->dossierIn()->create($dossiers);
-
-
-
-
-        //return view('general.home' );
+     DossierIn::create($dossiers);
         return redirect(route('tous_les_dossiers'));
     }
 
@@ -70,15 +56,6 @@ class DossiersController extends Controller
 
     public function modifier_dossier(Request $request)
     {
-        //mise à jour de la table membre
-        $membre = Membre::find($request->input('idmembre'));
-        $membre->nom = $request->nom;
-        $membre->prenom = $request->prenom;
-        $membre->telephone = $request->telephone;
-        $membre->num_cpte = $request->num_cpte;
-        $membre->save();
-
-
         //mise à jour de la table dossier_in
 
         $dossier_in = DossierIn::find($request->input('iddossierin'));

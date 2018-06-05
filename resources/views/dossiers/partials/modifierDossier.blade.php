@@ -3,40 +3,14 @@
     <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
-        <div s class="modal-content">
-            <div s class="modal-header">
+        <div  class="modal-content">
+            <div class="modal-header">
 
                 <h4 style="color:#4dfaff" class="modal-title">Modifier les informations et enregistrer</h4>
             </div >
             <div style="color:#5fa4a6" class="modal-body">
                 <form  method="POST" action="{{route('modifier_dossier')}}" >
                     {{csrf_field() }}
-                    <div id="panel-client">
-                        <div class="form-group row">
-                            <label  class="col-4 col-form-label">Nom : </label>
-                            <div class="col-7">
-                                <input class="form-control" type="text"  id="nom" name="nom" value="{{$mem->nom}}" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label  class="col-4 col-form-label">Prénom :</label>
-                            <div class="col-7">
-                                <input class="form-control" type="text"  id="prenom" name="prenom" value="{{$mem->prenom}}" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label  class="col-4 col-form-label">Téléphone :</label>
-                            <div class="col-7">
-                                <input class="form-control" type="tel"  id="telephone" name="telephone" value="{{$mem->telephone}}" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label  class="col-4 col-form-label">N° de compte :</label>
-                            <div class="col-7">
-                                <input class="form-control" type="text"  id="num_cpte" name="num_cpte" value="{{$mem->num_cpte}}" required="required">
-                            </div>
-                        </div>
-                    </div>
 
                     <div id="panel-credit">
                         <div class="form-group row">
@@ -47,7 +21,6 @@
                                     <option value="CT">Crédit de trésorerie</option>
                                     <option value="CS">Crédit scolaire</option>
                                     <option value="MC">Micro-Crédit</option>
-                                    <option value="DE">Découvert</option>
                                 </select>
                             </div>
                         </div>

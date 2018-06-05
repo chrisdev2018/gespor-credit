@@ -20,34 +20,19 @@
                 <div class="card-body">
                     <form  method="POST" action="{{route('enregistrer_dossier')}}" >
                         {{csrf_field() }}
-                        <div id="panel-client">
-                            <div class="form-group row">
-                                <label  class="col-4 col-form-label">Nom : </label>
-                                <div class="col-7">
-                                    <input class="form-control" type="text"  id="nom" name="nom" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-4 col-form-label">Prénom :</label>
-                                <div class="col-7">
-                                    <input class="form-control" type="text"  id="prenom" name="prenom" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-4 col-form-label">Téléphone :</label>
-                                <div class="col-7">
-                                    <input class="form-control" type="tel"  id="telephone" name="telephone" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-4 col-form-label">N° de compte :</label>
-                                <div class="col-7">
-                                    <input class="form-control" type="text"  id="num_cpte" name="num_cpte" required="required">
-                                </div>
-                            </div>
-                        </div>
-
                         <div id="panel-credit">
+                            <div class="form-group row">
+                                <label  class="col-4 col-form-label" >Membre :</label>
+                                <div class="col-7">
+                                    <select class="form-control standardSelect" name="membre_id" id="membre_id" required="required">
+                                        <option value="" ><small class="form-text text-muted">Faites votre choix</small></option>
+                                        @foreach($membres as $membre)
+                                            <option value="{{$membre->id}}">{{$membre->nom}} {{$membre->prenom}}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label  class="col-4 col-form-label" >Type de crédit :</label>
                                 <div class="col-7">
@@ -56,7 +41,6 @@
                                         <option value="CT">Credit de tresorerie</option>
                                         <option value="CS">Credit scolaire</option>
                                         <option value="MC">Micro-Crédit</option>
-                                        <option value="DE">Decouvert</option>
                                     </select>
                                 </div>
                             </div>

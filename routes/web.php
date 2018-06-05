@@ -24,7 +24,7 @@ Route::get('dashboard', 'HomeController@dashboard')->name('dashboard');
 Route::get('nouveau_membre', 'MembresController@displayForm')->name('nouveau_membre');
 Route::post('enregistrer', 'MembresController@store')->name('enregistrer_membre');
 Route::get('liste_membre', 'MembresController@list')->name('liste_membres');
-Route::get('modifier_membre', 'MembresController@update')->name('modifier_membre');
+Route::post('modifier_membre', 'MembresController@update')->name('modifier_membre');
 
 
 //****************************Routes pour la section "dossiers" *********************************************
