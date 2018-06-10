@@ -59,3 +59,8 @@ Route::get('decouverts_en_cours', 'SuiviController@decouverts_en_cours')->name("
 //*******************************Route pour la section "rapports" ******************************************************
 
 
+Route::get('etats_credit-tresorerie', 'RapportsController@etats_CT')->name("etats_CT");
+
+Route::get('etats_credit-scolaire', 'RapportsController@etats_CS')->name("etats_CS");
+
+Route::get('etats_micro-credit', 'RapportsController@etats_MC')->name("etats_MC");
