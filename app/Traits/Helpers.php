@@ -29,5 +29,10 @@ use Carbon\Carbon;
             return $date->format('m-Y');
         }
 
+       public function _format(Carbon $date)
+        {
+            return $date->format('Y-m-d');
+        }
+
 
     }

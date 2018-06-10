@@ -112,9 +112,10 @@ class SuiviController extends Controller
     public function solder_traite(Request $request)
     {
 
+       $traite = Traite::find($request->input('traite_id'));
 
-        $traite = Traite::find($request->input('traite_id'));
 
+//objet qui ne me sert en réalité qu'à remonter les information et à obtenir celle provenant de "dossier_oks"
         $objet = DB::table('traites')
                 ->join('dossier_oks', 'dossier_oks.id', '=', 'traites.dossier_ok_id')
                 ->where('traites.id', '=', $traite->id)
@@ -129,6 +130,21 @@ class SuiviController extends Controller
 
             $traite->mnt_effectif = $objet[0]->mnt_traite;
         }
+
+        //bout de code pour traiter le solde debut debiteur
+        /*obj permet toutes les traites emanant du même doossier et dont la date de passage
+        est inferieure à celle de la traite que l'on est en train de traiter*/
+
+        $obj = DB::table('traites')
+            ->where('traites.dossier_ok_id', '=', $traite->dossier_ok_id)
+            ->where('traites.date_passage', '<', $traite->date_passage)
+            ->get();
+
+        if(count($obj) == 0)
+        {
+            $traite->solde_debut_debiteur = $objet[0]->mnt_ok;
+        }
+        else $traite->solde_debut_debiteur = $objet[0]->mnt_ok - ($obj->sum('mnt_effectif'));
 
 
                     $date_effective= new Carbon($request->input('date_effective'));

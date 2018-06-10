@@ -17,7 +17,7 @@ class CreateTraitesTable extends Migration
             $table->increments('id');
             $table->boolean('statut')->default(false);
             $table->date('date_passage');
-            $table->bigInteger('mnt_effectif');
+            $table->bigInteger('mnt_effectif')->default(0);
             $table->date('date_effective');
             $table->integer('retard')->unsigned();
             $table->integer('solde_debut_debiteur')->default(0);
