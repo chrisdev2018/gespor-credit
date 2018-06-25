@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Decouvert extends Model
 {
-   protected $fillable = [ 'agio', 'date_ok', 'statut', 'dossier_in_id'];
+   protected $fillable = ['montant', 'agio', 'date_ok', 'statut', 'membre_id'];
     public $timestamps=false;
 
-   public function dossierIn()
+   public function membre()
    {
-       return $this->belongsTo('App\Models\DossierIn');
+       return $this->belongsTo('App\Models\Membre');
    }
 }

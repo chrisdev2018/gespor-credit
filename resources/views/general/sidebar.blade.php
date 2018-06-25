@@ -26,7 +26,10 @@
 
                 <h3 class="menu-title">DOSSIERS</h3><!-- /.menu-title -->
                 <li>
-                    <a href="{{route('nouveau_dossier')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square"></i>Nouveau</a>
+                    <a href="{{route('nouveau_dossier')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square"></i>Nouveau Crédit</a>
+                </li>
+                <li>
+                    <a href="{{route('nouveau_decouvert')}}" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square"></i>Nouveau Découvert</a>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Lister les dossiers</a>

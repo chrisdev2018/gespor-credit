@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DossierIn;
 use App\Models\DossierOk;
 use App\Models\DossierOut;
-use App\Models\Membre;
+use App\Models\Decouvert;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -168,6 +168,24 @@ class DossiersController extends Controller
         return view('dossiers.liste_dossier_out', compact('list'));
     }
 
+    public function  nouveau_decouvert()
+    {
+        $membres = DB::table('membres')->get();
+        return view('dossiers.nouveau_decouvert', compact('membres'));
+    }
+
+    public function  enregistrer_decouvert(Request $request)
+    {
+        $statut = 0;
+        Decouvert::create([
+            'montant'=>$request->input('montant'),
+            'agio'=>$request->input('agio'),
+            'date_ok'=>$request->input('date_ok'),
+            'statut'=>$statut,
+            'membre_id'=>$request->input('membre_id'),
+        ]);
+        return redirect(route('tous_les_dossiers'));
+    }
 
     public function dates_traite($nb, Carbon $date)
     {

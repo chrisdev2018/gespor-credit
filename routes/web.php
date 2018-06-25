@@ -38,6 +38,8 @@ Route::get('Dossiers_list_all', 'DossiersController@listerDossier')->name('tous_
     Route::get('checkstatus', 'DossiersController@check_status')->name('check_status');
     Route::get('lister_dossier_ok', 'DossiersController@lister_dossier_ok')->name('lister_dossier_ok');
     Route::get('lister_dossier_out', 'DossiersController@lister_dossier_out')->name('lister_dossier_out');
+    Route::get('nouveau_decouvert', 'DossiersController@nouveau_decouvert')->name('nouveau_decouvert');
+    Route::post('enregistrer_decouvert', 'DossiersController@enregistrer_decouvert')->name('enregistrer_decouvert');
 
 
 

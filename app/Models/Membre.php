@@ -13,4 +13,9 @@ class Membre extends Model
     {
         return $this->hasMany('App\Models\DossierIn');
     }
+
+    public function decouvert()
+    {
+        return $this->hasMany('App\Models\Decouvert');
+    }
 }
