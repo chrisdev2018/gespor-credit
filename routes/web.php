@@ -57,6 +57,8 @@ Route::get('choix_traites', 'SuiviController@choix_traites')->name("choix_traite
 
 Route::get('decouverts_en_cours', 'SuiviController@decouverts_en_cours')->name("decouverts_en_cours");
 
+Route::get('solder_decouvert/{id}', 'SuiviController@solder_decouvert');
+
 
 
 

@@ -20,13 +20,25 @@
                 <tr >
                     <th>N° Compte</th>
                     <th>Noms & Prénoms</th>
-                    <th>Type de credit</th>
-                    <th>Montant demandé</th>
-                    <th>Actions</th>
+                    <th>Montant accordé</th>
+                    <th>Agio</th>
+                    <th>date d'échéance</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-
+                    @foreach($decouverts as $decouvert)
+                        <tr>
+                            <td>{{$decouvert->num_cpte}}</td>
+                            <td>{{$decouvert->prenom}} {{$decouvert->nom}}</td>
+                            <td>{{$decouvert->montant}}</td>
+                            <td>{{$decouvert->agio}}</td>
+                            <td>{{$decouvert->date_ok}}</td>
+                            <td>
+                              <a href="{{url('solder_decouvert', ['id'=>$decouvert->id])}}" class="btn btn-success"><i class="fa fa-credit-card"></i>  Solder</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

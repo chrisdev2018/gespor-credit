@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Traite;
+use App\Models\Decouvert;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Traits\Helpers;
@@ -83,11 +84,7 @@ class SuiviController extends Controller
         return view('suivi.traites_en_cours', compact('traites'));
     }
 
-    public function decouverts_en_cours()
-    {
-        $result=0;
-        return view('suivi.decouverts_en_cours', compact($result));
-    }
+
 
     public function solder_traite(Request $request)
     {
@@ -138,6 +135,28 @@ class SuiviController extends Controller
 
 
         return redirect(route('traites_en_cours'));
+    }
+
+
+    public function decouverts_en_cours()
+    {
+        $decouverts = DB::table('membres')
+            ->join('decouverts', 'membres.id', '=', 'decouverts.membre_id')
+            ->where('decouverts.statut', '=', 0)
+            ->get();
+
+
+        return view('suivi.decouverts_en_cours', compact('decouverts'));
+    }
+
+    public function solder_decouvert($id)
+    {
+        $decouvert = Decouvert::find($id);
+
+        $decouvert->statut = 1;
+        $decouvert->save();
+
+        return redirect(route('decouverts_en_cours'));
     }
 
     public function choix_traites()
