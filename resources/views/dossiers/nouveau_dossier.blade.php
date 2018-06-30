@@ -9,6 +9,11 @@
 @extends('layouts.master')
 @section('title', 'Nouveau dossier ')
 
+@section('styles')
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+@endsection
+
+
 @section('content')
 
 
@@ -24,7 +29,7 @@
                             <div class="form-group row">
                                 <label  class="col-4 col-form-label" >Membre :</label>
                                 <div class="col-7">
-                                    <select class="form-control standardSelect" name="membre_id" id="membre_id" required="required">
+                                    <select class="form-control" name="membre_id" id="membre_id" required="required" >
                                         <option value="" ><small class="form-text text-muted">Faites votre choix</small></option>
                                         @foreach($membres as $membre)
                                             <option value="{{$membre->id}}">{{$membre->nom}} {{$membre->prenom}}</option>
@@ -36,7 +41,7 @@
                             <div class="form-group row">
                                 <label  class="col-4 col-form-label" >Type de crédit :</label>
                                 <div class="col-7">
-                                    <select class="form-control standardSelect" name="type_credit" id="type_credit" name="type_credit" required="required">
+                                    <select class="form-control standardSelect" name="type_credit" id="type_credit" name="type_credit"  required="required">
                                         <option value="" ><small class="form-text text-muted">Faites votre choix</small></option>
                                         <option value="CT">Credit de tresorerie</option>
                                         <option value="CS">Credit scolaire</option>
@@ -75,4 +80,8 @@
 
        </div>
 
+@endsection
+
+@section('scripts')
+    <script  href="assets/js/bootstrap-select.min.js"></script>
 @endsection

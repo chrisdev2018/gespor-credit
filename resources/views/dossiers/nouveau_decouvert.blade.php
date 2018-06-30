@@ -3,6 +3,10 @@
 
 @section('title', 'Nouveau découvert')
 
+@section('styles')
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+@endsection
+
 
 @section('content')
 
@@ -18,7 +22,7 @@
                         <div class="form-group row">
                             <label  class="col-4 col-form-label" >Membre :</label>
                             <div class="col-7">
-                                <select class="form-control standardSelect" name="membre_id" id="membre_id" required="required">
+                                <select class="form-control " name="membre_id" id="membre_id" required="required">
                                     <option value="" ><small class="form-text text-muted">Faites votre choix</small></option>
                                     @foreach($membres as $membre)
                                         <option value="{{$membre->id}}">{{$membre->nom}} {{$membre->prenom}}</option>
@@ -58,4 +62,9 @@
         </div>
 
     </div>
+@endsection
+
+
+@section('scripts')
+    <script  href="assets/js/bootstrap-select.min.js"></script>
 @endsection

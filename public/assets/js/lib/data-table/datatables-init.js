@@ -6,8 +6,6 @@
     -------------*/
 
 
-
-
     $('#bootstrap-data-table').DataTable({
         lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
     });
@@ -18,7 +16,8 @@
         dom: 'lBfrtip',
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            'print',  'excel'
+            //'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     });
 	

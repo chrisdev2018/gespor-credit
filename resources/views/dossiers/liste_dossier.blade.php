@@ -15,7 +15,7 @@
                 <strong class="card-title">Liste de tous les dossiers enregistrés</strong>
             </div>
             <div class="card-body">
-                <table id="bootstrap-data-table" class="table table-bordered table-striped table-hover">
+                <table id="bootstrap-data-table-export" class="table table-bordered table-striped table-hover">
                     <thead>
                     <tr >
                         <th>N° Compte</th>
