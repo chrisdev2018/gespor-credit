@@ -15,6 +15,7 @@
 
         </div>
         <div class="card-body">
+
             <table id="bootstrap-data-table" class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr >
@@ -31,14 +32,14 @@
                 <tbody>
                      @foreach($dossiers as $dossier)
                          <tr>
-                             <td>{{$dossier[0]->num_cpte}}</td>
-                             <td>{{$dossier[0]->nom}} {{$dossier[0]->prenom}}</td>
-                             <td>{{$dossier[0]->mnt_ok}}</td>
-                             <td>{{$dossier[0]->date_debut}}</td>
-                             <td>{{$dossier[0]->date_fin}}</td>
-                             <td>{{$dossier[0]->solde_debut_debiteur}}</td>
-                             <td>{{$dossier[0]->mnt_effectif}}</td>
-                             <td>{{($dossier[0]->solde_debut_debiteur) - ($dossier[0]->mnt_effectif )}}</td>
+                             <td>{{$dossier->num_cpte}}</td>
+                             <td>{{$dossier->nom}} {{$dossier->prenom}}</td>
+                             <td>{{$dossier->mnt_ok}}</td>
+                             <td>{{$dossier->date_debut}}</td>
+                             <td>{{$dossier->date_fin}}</td>
+                             <td>{{$dossier->solde_debut_debiteur}}</td>
+                             <td>{{$dossier->mnt_effectif}}</td>
+                             <td>{{($dossier->solde_debut_debiteur) - ($dossier->mnt_effectif )}}</td>
                          </tr>
                      @endforeach
                 </tbody>

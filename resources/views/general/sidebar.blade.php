@@ -43,14 +43,8 @@
                 </li>
 
                 <h3 class="menu-title">RAPPORTS</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-clipboard"></i>Etats des prêts</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="{{route('etats_CT')}}">Crédit de trésorerie</a></li>
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="{{route('etats_CS')}}">Crédit scolaire</a></li>
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="{{route('etats_MC')}}">Micro-Crédit</a></li>
-                        <li><i class="menu-icon fa fa-arrow-circle-right"></i><a href="#">Découvert</a></li>
-                    </ul>
+                <li >
+                    <a href="{{route('choix_etat')}}">  <i class="menu-icon fa fa-clipboard"></i>Etats des prêts</a>
                 </li>
 
                 <li class="menu-item-has-children dropdown">

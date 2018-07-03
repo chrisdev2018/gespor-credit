@@ -58,6 +58,9 @@ Route::get('decouverts_en_cours', 'SuiviController@decouverts_en_cours')->name("
 
 //*******************************Route pour la section "rapports" ******************************************************
 
+Route::get('choix_etat', 'RapportsController@choix_etat')->name("choix_etat");
+
+Route::post('afficher_etat', 'RapportsController@afficher_etat')->name("afficher_etat");
 
 Route::get('etats_credit-tresorerie', 'RapportsController@etats_CT')->name("etats_CT");
 
