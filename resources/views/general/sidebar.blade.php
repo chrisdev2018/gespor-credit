@@ -50,7 +50,7 @@
                     <a href="{{route('decouverts_en_cours')}}"> <i class="menu-icon fa fa-money"></i>Solder un découvert </a>
                 </li>
                 <li>
-                    <a href="{{route('echeancier')}}"> <i class="menu-icon fa  fa-file-text"></i>Gestion des échéancier </a>
+                    <a href="{{route('echeancier')}}"> <i class="menu-icon fa  fa-file-text"></i>Gestion des échéanciers </a>
                 </li>
 
                 <h3 class="menu-title">RAPPORTS</h3><!-- /.menu-title -->

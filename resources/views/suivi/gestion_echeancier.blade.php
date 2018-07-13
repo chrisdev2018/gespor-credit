@@ -18,7 +18,7 @@
                     <div class=" form-group col-6 row">
                         <label  class="col-5 col-form-label">Type de crédit :</label>
                         <select class="form-control col-5 standardSelect" name="type_credit" id="type_credit" required="required">
-                            <option value="" >Faites votre choix</option>
+                            <option ></option>
                             <option value="CT">Credit de tresorerie</option>
                             <option value="CS">Credit scolaire</option>
                             <option value="MC">Micro-Crédit</option>
@@ -26,7 +26,7 @@
                     </div>
                     <div class=" form-group col-6 row">
                         <label  class="col-4 col-form-label">Membre : </label>
-                        <select class="form-control col-5" type="text"  id="membre" name="membre" required="required">
+                        <select class="form-control col-5 selectpicker" type="text"  id="membre" data-live-search="true" name="membre" required="required" title="Faites votre choix...">
                             <option  value="" ><small class="form-text text-muted">Faites votre choix</small></option>
                         </select>
                     </div>
