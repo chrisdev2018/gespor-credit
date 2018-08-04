@@ -53,6 +53,7 @@ class DossiersController extends Controller
         return view('dossiers.liste_dossier', compact('membre', 'dossier_in'));
 
     }
+	
 
     public function modifier_dossier(Request $request)
     {

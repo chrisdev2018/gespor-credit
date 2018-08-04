@@ -37,7 +37,7 @@
         <div class="form-group row">
             <label  class="col-4 col-form-label">N° de compte :</label>
             <div class="col-7">
-                <input class="form-control" type="text"  id="num_cpte" name="num_cpte" required="required">
+                <input class="form-control" type="number"  id="num_cpte" name="num_cpte" required="required">
             </div>
         </div>
     </div>

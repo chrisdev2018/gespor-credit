@@ -26,7 +26,7 @@
                     </div>
                     <div class=" form-group col-6 row">
                         <label  class="col-4 col-form-label">Membre : </label>
-                        <select class="form-control col-5 selectpicker" type="text"  id="membre" data-live-search="true" name="membre" required="required" title="Faites votre choix...">
+                        <select class="form-control col-5"  id="membre" data-live-search="true" name="membre" required="required" >
                             <option  value="" ><small class="form-text text-muted">Faites votre choix</small></option>
                         </select>
                     </div>
@@ -79,8 +79,7 @@
 
                           for(var i=0; i<result.length; i++){
                               jQuery("#membre").append("<option value='"+result[i].id+"'>"+result[i].nom+" "+result[i].prenom+"</option>");
-                          }
-
+                          }                        
                     }
                 });
                 return false;

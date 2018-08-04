@@ -52,7 +52,7 @@
                             <div class="form-group row">
                                 <label class="col-4 col-form-label">Montant demandé :</label>
                                 <div class="col-7 input-group">
-                                    <input class="form-control " type="text"  id="mnt_dmd" name="mnt_dmd"  required="required">
+                                    <input class="form-control " type="number"  id="mnt_dmd" name="mnt_dmd"  required="required">
                                     <span class="input-group-addon" id="xaf" >FCFA</span>
                                 </div>
                             </div>
